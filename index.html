@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ammar Shaikh • Portfolio</title>
+   <style>
+        * {
+            cursor: none !important;
+        }
+        
+        body {
+            font-family: 'Sora', sans-serif;
+            background-color: #0f0715;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skills-section {
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skills-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(260deg, #8750f7 0%, rgba(115, 67, 210, 0) 100%);
+            border-radius: 50%;
+            filter: blur(150px);
+            width: 300px;
+            height: 300px;
+            z-index: 0;
+        }
+        
+        .section-title {
+            background: linear-gradient(to right, #8750f7 0%, white 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 24px;
+            color: white;
+            margin-bottom: 60px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+        
+        .category-title {
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #8750f7;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-item {
+            background: #1e112a;
+            border-radius: 16px;
+            padding: 20px 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(135, 80, 247, 0.3);
+            border: 1px solid #8750f7;
+        }
+        
+        .skill-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+            color: #8750f7;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover .skill-icon {
+            color: white;
+            transform: scale(1.2);
+        }
+        
+        .skill-name {
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover .skill-name {
+            color: #8750f7;
+        }
+        
+        .skill-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(135, 80, 247, 0.1) 0%, rgba(135, 80, 247, 0) 100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover::after {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .skill-category {
+                width: 100%;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
+    </style>
+  <!-- swiper slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- FONTAWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- font -->
+  <link rel="stylesheet" href="assets/font/stylesheet.css" />
+  <!-- AOS animation -->
+  <link rel="stylesheet" href="assets/css/aos.css" />
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <!-- main css -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- media query -->
+  <link rel="stylesheet" href="assets/css/media.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="bg-black h-boxshedow py-3 position-fixed w-100" style="z-index: 9999">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg">
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="bar-button color-primary" onclick="toggleButton()">☰</span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+  <ul class="navbar-nav gap-3 mb-2 mb-lg-0 fs-5">
+    <li class="nav-item text-center h-borderb"><a href="#skills" class="nav-link text-white h-font">Skills & Languages</a></li>
+    <li class="nav-item text-center h-borderb"><a href="#skills" class="nav-link text-white h-font">Projects</a></li>
+    <li class="nav-item text-center h-borderb"><a href="#experience" class="nav-link text-white h-font">Experience / History</a></li>
+    <li class="nav-item text-center h-borderb"><a href="#feedback" class="nav-link text-white h-font">Feedback</a></li>
+    <li class="nav-item text-center h-borderb"><a href="#contact" class="nav-link text-white h-font">Contact</a></li>
+  </ul>
+</div>
+
+<a href="https://drive.google.com/file/d/1c6aMFrd100WaxFOdpwdMC83F3MrqJGnu/view?usp=sharing" target="_blank" class="navbar-brand text-white fw-bold h-font">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Loader -->
+  <div class="loading vh-100 w-100 row justify-content-center align-content-center">
+    <div class="pl">
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__text h-font fw-bolder color-primary">Loading…</div>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div id="cursor" class="cursor">
+    <div class="ring">
+      <div></div>
+    </div>
+  </div>
+
+  <!-- Back to top button -->
+  <div class="main-top">
+    <a href="#1" aria-label="Back to top">
+      <button class="button" title="Back to top">
+        <svg viewBox="0 0 384 512" class="svgIcon" aria-hidden="true">
+          <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+        </svg>
+      </button>
+    </a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-bg position-relative overflow-hidden pt-5" id="1">
+    <div class="container-fluid">
+      <div class="row justify-content-center pt-5">
+        <div class="col-lg-6 col-md-12 pt-5 d-flex align-items-center justify-content-center">
+          <div>
+            <h2 class="h-font fw-bolder text-left text-white" style="font-size: 50px !important;">I am Ammar Shaikh</h2>
+            <div class="bg-h">
+              <h1 class="h-font fw-bolder text-left display-4" style="font-size: 40px;">Full‑Stack Web Developer + UX Designer</h1>
+            </div>
+            <p class="h-font text-white d-lg-none">
+              I break down complex user experience problems to create integrity‑focused solutions that connect people and businesses.
+            </p>
+            <div class="my-4 d-lg-none">
+              <a class="download-btn" href="#" download>DOWNLOAD CV <i class="fa-solid fa-cloud-arrow-down"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 pt-5 mt-5 d-flex align-items-center justify-content-center img-me">
+          <img src="assets/image/WhatsApp Image 2025-08-26 at 15.49.37_c80b2563.jpg" alt="Ammar Shaikh" />
+        </div>
+      </div>
+
+      <div class="main-counter mx-5 row justify-content-between">
+        <div class="col-lg-3 col-md-12">
+          <div class="counter d-flex gap-2 my-5 justify-content-center">
+            <div class="c-heading text-white">
+              <h2 class="fw-bolder">0</h2>
+            </div>
+            <div class="c-body fs-4 text-white">
+              <p>Years of <br />Experience</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-12">
+          <div class="counter d-flex gap-2 my-5 justify-content-center">
+            <div class="c-heading text-white">
+              <h2 class="fw-bolder">2+</h2>
+            </div>
+            <div class="c-body fs-4 text-white">
+              <p>Projects <br />Completed</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-12">
+          <div class="counter d-flex gap-2 my-5 justify-content-center">
+            <div class="c-heading text-white">
+              <h2 class="fw-bolder">2</h2>
+            </div>
+            <div class="c-body fs-4 text-white">
+              <p>Happy <br />Clients</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- language i know -->
+ 
+<section class="skills-section" id="skills">
+        <h3 class="section-title" data-aos="zoom-out">Languages & Technologies</h3>
+        <p class="section-subtitle" data-aos="zoom-out">
+            Technologies I excel in and have hands-on experience with.
+        </p>
+
+        <div class="skills-container" data-aos="fade-up" data-aos-duration="1200">
+            <!-- Perfectly Known -->
+            <div class="skill-category">
+                <h4 class="category-title">Perfectly Known</h4>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fa-brands fa-html5 skill-icon"></i>
+                        <p class="skill-name">HTML</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-css3 skill-icon"></i>
+                        <p class="skill-name">CSS</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-js skill-icon"></i>
+                        <p class="skill-name">JavaScript</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-node-js skill-icon"></i>
+                        <p class="skill-name">Node.js</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-react skill-icon"></i>
+                        <p class="skill-name">React</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-solid fa-database skill-icon"></i>
+                        <p class="skill-name">MongoDB</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-solid fa-database skill-icon"></i>
+                        <p class="skill-name">SQL</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic / Working Knowledge -->
+            <div class="skill-category">
+                <h4 class="category-title">Basic / Working Knowledge</h4>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fa-brands fa-java skill-icon"></i>
+                        <p class="skill-name">Java</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-python skill-icon"></i>
+                        <p class="skill-name">Python</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-solid fa-c skill-icon"></i>
+                        <p class="skill-name">C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Skills -->
+<section class="bg-black overflow-hidden" id="2">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <h3 class="bg-h text-center py-5 fw-bold" data-aos="zoom-out">My Key Skills</h3>
+      <p class="text-center text-white fs-4" data-aos="zoom-out">
+        Leveraging technical and interpersonal skills to excel in engineering and team-based projects.
+      </p>
+
+      <div class="row justify-content-center col-lg-12 col-md-10 col-sm-10">
+        <div class="services-table mb-5 mt-5 position-relative">
+
+          <div  data-aos="zoom-out"  class="service-row d-flex align-item-center px-3 border-b-primary justify-content-between">
+            <div class="d-flex align-content-center py-4">
+              <p class="fs-3 fw-bold color-primary me-3 ms-4">01</p>
+              <div class="fs-2 fw-bolder text-left text-white ms-3">Team Collaboration</div>
+            </div>
+            <div class="text-white my-auto fs-5">
+              <p>Effectively work in team environments, communicate ideas clearly, and achieve common goals.</p>
+            </div>
+          </div>
+
+          <div data-aos="zoom-out" class="service-row d-flex align-item-center px-3 border-b-primary justify-content-between">
+            <div class="d-flex align-content-center py-4">
+              <p class="fs-3 fw-bold color-primary me-3 ms-4">02</p>
+              <div class="fs-2 fw-bolder text-left text-white ms-3">Leadership</div>
+            </div>
+            <div class="text-white my-auto fs-5">
+              <p>Lead projects, guide team members, and take initiative in achieving tasks efficiently.</p>
+            </div>
+          </div>
+
+          <div data-aos="zoom-out" class="service-row d-flex align-item-center px-3 border-b-primary justify-content-between">
+            <div class="d-flex align-content-center py-4">
+              <p class="fs-3 fw-bold color-primary me-3 ms-4">03</p>
+              <div class="fs-2 fw-bolder text-left text-white ms-3">Problem Solving</div>
+            </div>
+            <div class="text-white my-auto fs-5">
+              <p>Analyze complex issues, identify solutions quickly, and implement them effectively in projects.</p>
+            </div>
+          </div>
+
+          <div data-aos="zoom-out" class="service-row d-flex align-item-center px-3 border-b-primary justify-content-between">
+            <div class="d-flex align-content-center py-4">
+              <p class="fs-3 fw-bold color-primary me-3 ms-4">04</p>
+              <div class="fs-2 fw-bolder text-left text-white ms-3">Self-discipline & Learning</div>
+            </div>
+            <div class="text-white my-auto fs-5">
+              <p>Consistently learn new technologies, adapt quickly, and maintain discipline to achieve goals.</p>
+            </div>
+          </div>
+
+          <div data-aos="zoom-out" class="service-row d-flex align-item-center px-3 border-b-primary justify-content-between">
+            <div class="d-flex align-content-center py-4">
+              <p class="fs-3 fw-bold color-primary me-3 ms-4">05</p>
+              <div class="fs-2 fw-bolder text-left text-white ms-3">Fast & Quick Learner</div>
+            </div>
+            <div class="text-white my-auto fs-5">
+              <p>Quickly grasp new concepts, programming languages, and frameworks to deliver high-quality work.</p>
+            </div>
+          </div>
+
+          <div data-aos="zoom-out" class="service-row d-flex align-item-center px-3 border-b-primary justify-content-between">
+            <div class="d-flex align-content-center py-4">
+              <p class="fs-3 fw-bold color-primary me-3 ms-4">06</p>
+              <div class="fs-2 fw-bolder text-left text-white ms-3">Adaptability</div>
+            </div>
+            <div class="text-white my-auto fs-5">
+              <p>Adjust seamlessly to new tools, work environments, and project requirements to deliver efficient results.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Projects -->
+  <section class="hero-bg-b py-4 h-font overflow-hidden" id="projects">
+    <div class="container-fluid">
+      <h3 class="bg-h text-center mt-5 fw-bold" data-aos="zoom-out">Featured Projects</h3>
+      <p class="text-center text-white fs-4 pt-3" data-aos="zoom-out">Real‑world apps built with modern stacks.</p>
+
+      <div class="row justify-content-center g-4 px-3" data-aos="fade-up" data-aos-duration="1200">
+        <!-- Crystal Stones Mart -->
+        <div class="col-lg-5 col-md-6">
+          <div class="h-card rounded-4 overflow-hidden">
+            <div class="content-box h-font px-4 pt-4 pb-3">
+              <h2 class="h-card-title mt-4">Crystal Stones Mart</h2>
+              <p class="h-card-title fs-6 color-primary mb-2"><i class="fa-solid fa-gem me-2"></i>B2B Wholesale E‑commerce</p>
+              <p class="h-card-content fs-6 mb-2">
+                A wholesale marketplace for crystal products tailored to hall‑sellers. Includes product catalog, cart & order flow, role‑based admin, and inquiry management.
+              </p>
+              <ul class="text-white-50 fs-6 mb-3">
+                <li>Stack: <strong>MERN</strong> (MongoDB, Express, React, Node)</li>
+                <li>Highlights: SEO‑ready, secure auth, responsive UI, performance‑optimized</li>
+              </ul>
+             <a href="https://crystalstonesmart.com/"> <span class="see-more">visit Website</span></a>
+            </div>
+            <div class="date-box rounded-4">
+              <img src="assets/image/fullLogo.png" alt="Crystal Stones Mart preview" class=" h-100 rounded-4" style="width: 190%;" />
+            </div>
+          </div>
+        </div>
+        <!-- Nutrition Mate -->
+        <div class="col-lg-5 col-md-6">
+          <div class="h-card rounded-4 overflow-hidden">
+            <div class="content-box h-font px-4 pt-4 pb-3">
+              <h2 class="h-card-title mt-4">Nutrition Mate</h2>
+              <p class="h-card-title fs-6 color-primary mb-2"><i class="fa-solid fa-apple-whole me-2"></i>Health & Nutrition Platform</p>
+              <p class="h-card-content fs-6 mb-2">
+                Health‑focused web app with a small e‑commerce for nutrition products, BMI (yearly) tracking, calorie‑based food suggestions, and maintenance‑calorie planning.
+              </p>
+              <ul class="text-white-50 fs-6 mb-3">
+                <li>Stack: <strong>React + Firebase</strong></li>
+                <li>Features: Auth, product listing, cart, analytics dashboards</li>
+              </ul>
+              <a href="https://nutrition-zeta-eight.vercel.app/"><span class="see-more">visit website</span></a>
+            </div>
+            <div class="date-box rounded-4 mb-3">
+              <img src="assets/image/nutritonmate.png" alt="Nutrition Mate preview" class=" h-100 rounded-4" style="width: 190%;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Education -->
+  <section class="bg-black overflow-hidden" id="experience">
+    <div class="container-fluid">
+      <div class="row justify-content-center px-3">
+        <div class="s-edu col-lg-6 justify-content-center row pb-5">
+          <h2 class="bg-h ms-5"><i class="fa-solid fa-briefcase mx-3 ms-5 pt-5 pb-3"></i>My Experience</h2>
+
+          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-right">
+            <h2 class="color-primary mb-2 fw-bold">2024 – 2025</h2>
+            <p class="text-white fs-2 my-2 fw-bold">Full‑Stack Developer</p>
+            <p class="fs-6 text-white-50 mb-0 fw-semibold">Red & White Multimedia Education</p>
+          </div>
+
+          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-right">
+            <h2 class="color-primary mb-2 fw-bold">2024 – present</h2>
+            <p class="text-white fs-2 my-2 fw-bold">MERN Stack Developer</p>
+            <p class="fs-6 text-white-50 mb-1 fw-semibold">React, Node, Express, MongoDB</p>
+            <p class="fs-6 text-white-50 mb-0">Building end‑to‑end web apps and APIs.</p>
+          </div>
+
+          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-right">
+            <h2 class="color-primary mb-2 fw-bold">2024 – 2024</h2>
+            <p class="text-white fs-2 my-2 fw-bold">AI-ML Engineer – NSQF Level 5</p>
+            <p class="fs-6 text-white-50 mb-0 fw-semibold">NASSCOM (Skill India)</p>
+          </div>
+
+          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-right">
+            <h2 class="color-primary mb-2 fw-bold">2021 – present</h2>
+            <p class="text-white fs-2 my-2 fw-bold">Video Editing</p>
+            <p class="fs-6 text-white-50 mb-0 fw-semibold">Self‑initiated & freelance</p>
+          </div>
+        </div>
+
+        <div class="s-exp col-lg-6 justify-content-center row pb-5">
+          <h2 class="bg-h ms-5"><i class="fa-solid fa-graduation-cap mx-3 ms-5 pt-5 pb-3"></i>My Education</h2>
+
+          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-left">
+            <h2 class="color-primary mb-2 fw-bold">2022 – 2026</h2>
+            <p class="text-white fs-2 my-2 fw-bold">B.E. in Computer Engineering</p>
+            <p class="fs-6 text-white-50 mb-1 fw-semibold">S.S.A.S.I.T., Surat — under G.T.U.</p>
+            <p class="fs-6 text-white-50 mb-0">Currently pursuing • Expected graduation: <strong>2026</strong></p>
+          </div>
+
+          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-left">
+            <h2 class="color-primary mb-2 fw-bold">2024 – present</h2>
+            <p class="text-white fs-2 my-2 fw-bold">Full‑Stack Development (Training)</p>
+            <p class="fs-6 text-white-50 mb-0 fw-semibold">Red & White Multimedia Education</p>
+          </div>
+
+          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-left">
+            <h2 class="color-primary mb-2 fw-bold">2021 – 2022</h2>
+            <p class="text-white fs-2 my-2 fw-bold">H.S.C.</p>
+            <p class="fs-6 text-white-50 mb-0 fw-semibold">G.S.E.B.</p>
+          </div>
+
+          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-left">
+            <h2 class="color-primary mb-2 fw-bold">2019 – 2020</h2>
+            <p class="text-white fs-2 my-2 fw-bold">S.S.C.</p>
+            <p class="fs-6 text-white-50 mb-0 fw-semibold">G.S.E.B.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Feedback / Testimonials -->
+<section class="bg-black overflow-hidden" id="feedback">
+  <div class="container-fluid">
+    <div class="row p-0 m-0 gap-0 pt-5 align-content-center justify-content-center">
+      
+      <div class="mt-5 mx-3 col-lg-5 col-md-12">
+        <h2 class="bg-h fw-bold" data-aos="zoom-out">My Clients' Stories</h2>
+        <p class="fs-4 text-white" data-aos="zoom-out">Empowering people in their digital journey with my services.</p>
+      </div>
+
+      <div class="px-2 row align-content-center col-lg-6 col-md-12">
+        <div class="s-slider align-content-center row px-auto w-100">
+          <div class="swiper mySwiper px-4 align-content-center" data-aos="fade-left" data-aos-offset="200" data-aos-duration="600">
+            <div class="swiper-wrapper">
+
+             
+
+              <!-- Adjaz Shaikh -->
+              <div class="swiper-slide row align-content-center me-5">
+                <div class="h-card rounded-4">
+                  <div class="content-box h-font px-3 pt-5 pb-3">
+                    <h1 class="h-card-title">Adjaz Shaikh</h1>
+                    <p class="h-card-title fs-5 color-primary mb-0"><i class="fa-solid fa-user-tie me-3"></i>Owner, Crystal Stones Mart</p>
+                    <p class="h-card-content fs-6 mt-0">“Best experience! Ammar made our productivity and advertising easy with Crystal Stones Mart. Highly efficient and reliable.”</p>
+                 
+                  </div>
+                  <div class="date-box rounded-4">
+                    <img src="assets/image/img-5.jpeg" alt="Adjaz Shaikh" class="w-100 rounded-4" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Faruk Shaikh -->
+              <div class="swiper-slide row align-content-center me-5">
+                <div class="h-card rounded-4">
+                  <div class="content-box h-font px-3 pt-5 pb-3">
+                    <h1 class="h-card-title">Faruk Shaikh</h1>
+                    <p class="h-card-title fs-5 color-primary"><i class="fa-solid fa-dumbbell me-3"></i>Gym Trainer</p>
+                    <p class="h-card-content fs-6">“Using Ammar's Nutrition Mate, I manage health check-ups for my personal clients efficiently. Truly helpful for fitness planning.”</p>
+                    
+                  </div>
+                  <div class="date-box rounded-4">
+                    <img src="assets/image/img-5.jpeg" alt="Faruk Shaikh" class="w-100 rounded-4" />
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Piyush Nakrani -->
+              <div class="swiper-slide row align-content-center me-5">
+                <div class="h-card rounded-4">
+                  <div class="content-box h-font px-3 pt-5 pb-3">
+                    <h1 class="h-card-title">Piyush Nakrani</h1>
+                    <p class="h-card-title fs-5 color-primary"><i class="fa-solid fa-user-tie me-3"></i>React & Node Mentor</p>
+                    <p class="h-card-content fs-6">“Ammar has solid knowledge of working with live websites and REST APIs. Great understanding of full-stack development.”</p>
+                    <span class="see-more">See More</span>
+                  </div>
+                  <div class="date-box rounded-4">
+                    <img src="assets/image/image.png" alt="Piyush Nakrani" class="w-100 rounded-4" />
+                  </div>
+                </div>
+              </div>
+ <!-- Hardik Patel -->
+              <div class="swiper-slide row align-content-center me-5">
+                <div class="h-card rounded-4">
+                  <div class="content-box h-font px-3 pt-5 pb-3">
+                    <h1 class="h-card-title">Hardik Patel</h1>
+                    <p class="h-card-title fs-5 color-primary"><i class="fa-solid fa-image-portrait me-3"></i>FrontEnd Mentor</p>
+                    <p class="h-card-content fs-6">“Ammar is a professional front‑end developer. He delivers quality and perfection.”</p>
+                   
+                  </div>
+                  <div class="date-box rounded-4">
+                    <img src="assets/image/Screenshot 2024-05-05 180940.png" alt="Hardik Patel" class="w-100 rounded-4" />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Form -->
+<section class="bg-black h-font py-5 overflow-hidden" id="contact">
+  <div class="container-fluid">
+    
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <h2 class="bg-h fs-1 fw-bolder">Contact Me </h2>
+      <p class="fs-6 text-white">I will responce you with</p>
+    </div>
+
+    <div class="row justify-content-center">
+
+      <!-- Left Column -->
+      <div class="col-lg-6 col-md-12" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <div class="persnal-info align-content-center">
+
+          <!-- Phone -->
+          <div class="prs-card d-flex mb-5">
+            <div class="prs-logo text-white text-center py-2">
+              <i class="fa-solid fa-phone-volume rounded-circle p-3"></i>
+            </div>
+            <div class="prs-detail ms-4 m-0 w-fit">
+              <span class="fs-5 text-white m-0 p-0 fw-semibold">Phone / WhatsApp</span>
+              <p class="fs-4 text-white mt-1 m-0 p-0 fw-bold">
+                <a href="tel:+919898326125" class="text-white text-decoration-none">+91 98983 26125</a> |
+                <a href="https://wa.me/919898326125" target="_blank" class="text-white text-decoration-none">WhatsApp</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="prs-card d-flex mb-5">
+            <div class="prs-logo text-white text-center py-2">
+              <i class="fa-solid fa-envelope rounded-circle p-3"></i>
+            </div>
+            <div class="prs-detail ms-4 m-0 w-fit">
+              <span class="fs-5 text-white m-0 p-0 fw-semibold">Email</span>
+              <p class="fs-4 text-white mt-1 m-0 p-0 fw-bold">
+                <a href="mailto:ammar15102004@gmail.com" class="text-white text-decoration-none">ammar15102004@gmail.com</a>
+              </p>
+            </div>
+          </div>
+    <!-- Address -->
+          <div class="prs-card d-flex mb-">
+            <div class="prs-logo text-white text-center py-2">
+              <i class="fa-solid fa-location-dot rounded-circle p-3"></i>
+            </div>
+            <div class="prs-detail ms-4 m-0 w-fit">
+              <span class="fs-5 text-white m-0 p-0 fw-semibold">Address</span>
+              <p class="fs-4 text-white mt-1 m-0 p-0 fw-bold">
+                Rander, Surat, Gujarat<br />395005
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-lg-6 col-md-12" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <div class="persnal-info align-content-center">
+
+          <!-- LinkedIn -->
+          <div class="prs-card d-flex mb-5">
+            <div class="prs-logo text-white text-center py-2">
+              <i class="fa-brands fa-linkedin rounded-circle p-3"></i>
+            </div>
+            <div class="prs-detail ms-4 m-0 w-fit">
+              <span class="fs-5 text-white m-0 p-0 fw-semibold">LinkedIn</span>
+              <p class="fs-4 text-white mt-1 m-0 p-0 fw-bold">
+                <a href="https://www.linkedin.com/in/ammar-shaikh-747897250" target="_blank" class="text-white text-decoration-none">linkedin@AmmarShaikh</a>
+              </p>
+            </div>
+          </div>
+              <!-- GitHub -->
+          <div class="prs-card d-flex mb-5">
+            <div class="prs-logo text-white text-center py-2">
+              <i class="fa-brands fa-github rounded-circle p-3"></i>
+            </div>
+            <div class="prs-detail ms-4 m-0 w-fit">
+              <span class="fs-5 text-white m-0 p-0 fw-semibold">GitHub</span>
+              <p class="fs-4 text-white mt-1 m-0 p-0 fw-bold">
+                <a href="https://github.com/ammar3040" target="_blank" class="text-white text-decoration-none">githubammar3040</a>
+              </p>
+            </div>
+          </div>
+
+      
+
+          <!-- Message / Note -->
+          <div class="prs-card d-flex">
+            <div class="prs-logo text-white text-center py-2">
+              <i class="fa-solid fa-comment-dots rounded-circle p-3"></i>
+            </div>
+            <div class="prs-detail ms-4 m-0 w-fit">
+              <span class="fs-5 text-white m-0 p-0 fw-semibold">Message</span>
+              <p class="fs-4 text-white mt-1 m-0 p-0 fw-bold">
+                Feel free to reach out via any platform. I will respond promptly!
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer class="footer-area bg-black" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="contact-content text-center">
+            <div class="contact-social">
+              <ul class="list-unstyled">
+                
+                <li><a class="hover-target" target="_blank"  href="https://www.linkedin.com/in/ammar-shaikh-747897250"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a class="hover-target" target="_blank"  href="https://github.com/ammar3040"><i class="fab fa-github"></i></a></li>
+                <li><a class="hover-target" target="_blank"  href="https://www.instagram.com/ammar_3040/"><i class="fab fa-instagram"></i></a></li>
+                <li><a class="hover-target" target="_blank"  href="https://wa.me/919898326125"><i class="fab fa-whatsapp"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-white-50">Copyright &copy; 2024 • Thanks for visiting.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- jquery js -->
+  <script src="assets/js/jquery-3.7.1.slim.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS -->
+  <script src="assets/js/aos.js"></script>
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Loader hide -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const loader = document.querySelector(".loading");
+      if (loader) loader.classList.add("hide");
+    });
+  </script>
+
+  <!-- Cursor follow -->
+  <script>
+    $(window).mousemove(function (e) {
+      $(".ring").css(
+        "transform",
+        `translateX(calc(${e.clientX}px - 1.25rem)) translateY(calc(${e.clientY}px - 1.25rem))`
+      );
+    });
+  </script>
+
+  <!-- Navbar toggle icon -->
+  <script>
+    function toggleButton() {
+      var button = document.querySelector('.bar-button');
+      if (button) button.textContent = (button.textContent === '☰') ? '✖' : '☰';
+    }
+  </script>
+
+  <!-- Service rows reveal -->
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        var $rows = $('.service-row');
+        if ($rows.length === 0) return;
+        var imagePos = $rows.first().offset().top;
+        var windowHeight = $(window).height();
+        var topOfWindow = $(window).scrollTop();
+        if (imagePos < topOfWindow + windowHeight - 100) {
+          $rows.addClass("visible");
+        }
+      });
+    });
+  </script>
+
+  <!-- Swiper init -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        0: { slidesPerView: 1, spaceBetween: 16 },
+        992: { slidesPerView: 2, spaceBetween: 24 }
+      }
+    });
+  </script>
+
+  <!-- AOS init -->
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
