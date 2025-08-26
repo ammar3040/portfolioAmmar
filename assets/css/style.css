@@ -438,7 +438,8 @@ transition-delay: 2s;
     color: white;
 }
 .img-me img{
-    width: 400px;
+      width: 300px;
+    height: 300px;
     padding: 0 !important;
     border: 2px #2a1454 solid !important;
     border: #2a1454;
@@ -822,4 +823,5 @@ footer p {
   padding: 40px 0;
   text-align: center;
 }
+
 
