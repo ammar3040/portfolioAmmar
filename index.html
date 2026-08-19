@@ -1,851 +1,667 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-mode="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ammar Shaikh • Portfolio</title>
-   <style>
-        * {
-            cursor: none !important;
-        }
-        
-        body {
-            font-family: 'Sora', sans-serif;
-            background-color: #0f0715;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .skills-section {
-            padding: 80px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .skills-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: linear-gradient(260deg, #8750f7 0%, rgba(115, 67, 210, 0) 100%);
-            border-radius: 50%;
-            filter: blur(150px);
-            width: 300px;
-            height: 300px;
-            z-index: 0;
-        }
-        
-        .section-title {
-            background: linear-gradient(to right, #8750f7 0%, white 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 50px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            font-size: 24px;
-            color: white;
-            margin-bottom: 60px;
-        }
-        
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .skill-category {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-        }
-        
-        .category-title {
-            color: white;
-            font-weight: bold;
-            font-size: 24px;
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #8750f7;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-item {
-            background: #1e112a;
-            border-radius: 16px;
-            padding: 20px 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            height: 120px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .skill-item:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 10px 25px rgba(135, 80, 247, 0.3);
-            border: 1px solid #8750f7;
-        }
-        
-        .skill-icon {
-            font-size: 40px;
-            margin-bottom: 12px;
-            color: #8750f7;
-            transition: all 0.3s ease;
-        }
-        
-        .skill-item:hover .skill-icon {
-            color: white;
-            transform: scale(1.2);
-        }
-        
-        .skill-name {
-            color: white;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-        
-        .skill-item:hover .skill-name {
-            color: #8750f7;
-        }
-        
-        .skill-item::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(135, 80, 247, 0.1) 0%, rgba(135, 80, 247, 0) 100%);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .skill-item:hover::after {
-            opacity: 1;
-        }
-        
-        @media (max-width: 768px) {
-            .skills-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .skill-category {
-                width: 100%;
-            }
-            
-            .skills-grid {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            }
-        }
-    </style>
-  <!-- swiper slider -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <meta name="description" content="Ammar Shaikh — MERN Stack Developer, freelancer, and 15+ project shipper." />
+  <title>Ammar Shaikh — Studio · MERN Developer & Freelancer</title>
 
-  <!-- FONTAWESOME -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <!-- font -->
-  <link rel="stylesheet" href="assets/font/stylesheet.css" />
-  <!-- AOS animation -->
-  <link rel="stylesheet" href="assets/css/aos.css" />
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <!-- main css -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- media query -->
-  <link rel="stylesheet" href="assets/css/media.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <!-- Header -->
-  <header class="bg-black h-boxshedow py-3 position-fixed w-100" style="z-index: 9999">
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg">
-        
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="bar-button color-primary" onclick="toggleButton()">☰</span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-  <ul class="navbar-nav gap-3 mb-2 mb-lg-0 fs-5">
-    <li class="nav-item text-center h-borderb"><a href="#skills" class="nav-link text-white h-font">Skills & Languages</a></li>
-    <li class="nav-item text-center h-borderb"><a href="#skills" class="nav-link text-white h-font">Projects</a></li>
-    <li class="nav-item text-center h-borderb"><a href="#experience" class="nav-link text-white h-font">Experience / History</a></li>
-    <li class="nav-item text-center h-borderb"><a href="#feedback" class="nav-link text-white h-font">Feedback</a></li>
-    <li class="nav-item text-center h-borderb"><a href="#contact" class="nav-link text-white h-font">Contact</a></li>
-  </ul>
-</div>
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"><span class="cursor-label" id="cursorLabel"></span></div>
 
-<a href="https://drive.google.com/file/d/1c6aMFrd100WaxFOdpwdMC83F3MrqJGnu/view?usp=sharing" target="_blank" class="navbar-brand text-white fw-bold h-font">Resume</a>
-      </nav>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="pre-mark">Ammar<em>Shaikh</em></div>
+    <div class="pre-bar"><span id="preBar"></span></div>
+    <div class="pre-count"><span id="preCount">00</span> <em>—</em> Loading studio</div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Fixed section indicator -->
+  <div class="section-indicator" id="sectionIndicator">
+    <div class="si-num"><span id="siNum">01</span> <em>/ 06</em></div>
+    <div class="si-label" id="siLabel">Intro</div>
+  </div>
+
+  <!-- Nav -->
+  <header class="nav">
+    <a href="#hero" class="brand" data-cursor="home">
+      <span class="brand-dot"></span>
+      <span>Ammar<em>.</em>Shaikh</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Timeline</a>
+      <a href="#testimonials">Voices</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="mode-toggle" id="modeToggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-sun sun-icon"></i>
+        <i class="fa-solid fa-moon moon-icon"></i>
+      </button>
+      <a class="nav-cta" href="mailto:ammar15102004@gmail.com" data-cursor="write">
+        <span class="nav-cta-inner">
+          <span>Hire me</span>
+          <span>Let's talk</span>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
 
-  <!-- Loader -->
-  <div class="loading vh-100 w-100 row justify-content-center align-content-center">
-    <div class="pl">
-      <div class="pl__dot"></div>
-      <div class="pl__dot"></div>
-      <div class="pl__dot"></div>
-      <div class="pl__dot"></div>
-      <div class="pl__dot"></div>
-      <div class="pl__dot"></div>
-      <div class="pl__dot"></div>
-      <div class="pl__dot"></div>
-      <div class="pl__dot"></div>
-      <div class="pl__dot"></div>
-      <div class="pl__dot"></div>
-      <div class="pl__dot"></div>
-      <div class="pl__text h-font fw-bolder color-primary">Loading…</div>
-    </div>
-  </div>
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero" data-section="01" data-label="Intro">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-grain"></div>
 
-  <!-- Custom cursor -->
-  <div id="cursor" class="cursor">
-    <div class="ring">
-      <div></div>
-    </div>
-  </div>
-
-  <!-- Back to top button -->
-  <div class="main-top">
-    <a href="#1" aria-label="Back to top">
-      <button class="button" title="Back to top">
-        <svg viewBox="0 0 384 512" class="svgIcon" aria-hidden="true">
-          <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
-        </svg>
-      </button>
-    </a>
-  </div>
-
-  <!-- Hero -->
-  <section class="hero-bg position-relative overflow-hidden pt-5" id="1">
-    <div class="container-fluid">
-      <div class="row justify-content-center pt-5">
-        <div class="col-lg-6 col-md-12 pt-5 d-flex align-items-center justify-content-center">
-          <div>
-            <h2 class="h-font fw-bolder text-left text-white" style="font-size: 50px !important;">I am Ammar Shaikh</h2>
-            <div class="bg-h">
-              <h1 class="h-font fw-bolder text-left display-4" style="font-size: 40px;">Full‑Stack Web Developer + UX Designer</h1>
-            </div>
-            <p class="h-font text-white d-lg-none">
-              I break down complex user experience problems to create integrity‑focused solutions that connect people and businesses.
-            </p>
-            <div class="my-4 d-lg-none">
-              <a class="download-btn" href="#" download>DOWNLOAD CV <i class="fa-solid fa-cloud-arrow-down"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-12 pt-5 mt-5 d-flex align-items-center justify-content-center img-me">
-          <img src="assets/image/WhatsApp Image 2025-08-26 at 15.49.37_c80b2563.jpg" alt="Ammar Shaikh" />
-        </div>
-      </div>
-
-      <div class="main-counter mx-5 row justify-content-between">
-        <div class="col-lg-3 col-md-12">
-          <div class="counter d-flex gap-2 my-5 justify-content-center">
-            <div class="c-heading text-white">
-              <h2 class="fw-bolder">2</h2>
-            </div>
-            <div class="c-body fs-4 text-white">
-              <p>Years of <br />Experience</p>
-            </div>
-          </div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-tag" data-hero-el>
+          <span class="dot"></span>
+          <span>Available for freelance</span>
+          <span class="dv">·</span>
+          <span>Currently on Upwork</span>
         </div>
 
-        <div class="col-lg-3 col-md-12">
-          <div class="counter d-flex gap-2 my-5 justify-content-center">
-            <div class="c-heading text-white">
-              <h2 class="fw-bolder">2+</h2>
-            </div>
-            <div class="c-body fs-4 text-white">
-              <p>Projects <br />Completed</p>
-            </div>
-          </div>
-        </div>
+        <h1 class="hero-title" data-hero-el>
+          <div class="line"><span data-split>Building</span></div>
+          <div class="line"><span data-split class="ital-line">full‑stack</span></div>
+          <div class="line"><span data-split>digital things,</span></div>
+          <div class="line"><span data-split>with care.</span></div>
+        </h1>
 
-        <div class="col-lg-3 col-md-12">
-          <div class="counter d-flex gap-2 my-5 justify-content-center">
-            <div class="c-heading text-white">
-              <h2 class="fw-bolder">2</h2>
-            </div>
-            <div class="c-body fs-4 text-white">
-              <p>Happy <br />Clients</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- language i know -->
- 
-<section class="skills-section" id="skills">
-        <h3 class="section-title" data-aos="zoom-out">Languages & Technologies</h3>
-        <p class="section-subtitle" data-aos="zoom-out">
-            Technologies I excel in and have hands-on experience with.
+        <p class="hero-sub" data-hero-el>
+          Hi — I'm <strong>Ammar Shaikh</strong>, a MERN developer & freelancer from Surat.
+          Shipping production apps at <strong>CoderKube Technology</strong> and running independent
+          builds via Upwork and direct clients.
         </p>
 
-        <div class="skills-container" data-aos="fade-up" data-aos-duration="1200">
-            <!-- Perfectly Known -->
-            <div class="skill-category">
-                <h4 class="category-title">Perfectly Known</h4>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fa-brands fa-html5 skill-icon"></i>
-                        <p class="skill-name">HTML</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fa-brands fa-css3 skill-icon"></i>
-                        <p class="skill-name">CSS</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fa-brands fa-js skill-icon"></i>
-                        <p class="skill-name">JavaScript</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fa-brands fa-node-js skill-icon"></i>
-                        <p class="skill-name">Node.js</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fa-brands fa-react skill-icon"></i>
-                        <p class="skill-name">React</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fa-solid fa-database skill-icon"></i>
-                        <p class="skill-name">MongoDB</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fa-solid fa-database skill-icon"></i>
-                        <p class="skill-name">SQL</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Basic / Working Knowledge -->
-            <div class="skill-category">
-                <h4 class="category-title">Basic / Working Knowledge</h4>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fa-brands fa-java skill-icon"></i>
-                        <p class="skill-name">Java</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fa-brands fa-python skill-icon"></i>
-                        <p class="skill-name">Python</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fa-solid fa-c skill-icon"></i>
-                        <p class="skill-name">C</p>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-cta" data-hero-el>
+          <a href="#work" class="btn btn-primary" data-cursor="view">
+            <span>See selected work</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost" data-cursor="write">
+            <span>Start a conversation</span>
+          </a>
         </div>
-    </section>
+      </div>
 
-<!-- Skills -->
-<section class="bg-black overflow-hidden" id="2">
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <h3 class="bg-h text-center py-5 fw-bold" data-aos="zoom-out">My Key Skills</h3>
-      <p class="text-center text-white fs-4" data-aos="zoom-out">
-        Leveraging technical and interpersonal skills to excel in engineering and team-based projects.
+      <div class="hero-right">
+        <div class="hero-stats" data-hero-el>
+          <div class="stat">
+            <div class="num"><span data-count="15">0</span><em>+</em></div>
+            <div class="lbl">Production projects<br/>shipped at CoderKube</div>
+          </div>
+          <div class="stat">
+            <div class="num"><span data-count="3">0</span><em>+</em></div>
+            <div class="lbl">Large freelance<br/>builds delivered</div>
+          </div>
+          <div class="stat">
+            <div class="num"><span data-count="10">0</span><em>K+</em></div>
+            <div class="lbl">Users on APIs<br/>I've engineered</div>
+          </div>
+          <div class="stat">
+            <div class="num"><span data-count="2">0</span><em>yrs</em></div>
+            <div class="lbl">Building for the web<br/>professionally</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint" data-hero-el>
+      <span>Scroll to explore</span>
+      <div class="drop"></div>
+    </div>
+  </section>
+
+  <!-- ==================== MARQUEE 1 ==================== -->
+  <div class="mq mq-1">
+    <div class="mq-track">
+      <span>MERN Developer</span><em>◇</em>
+      <span>UX Minded</span><em>◇</em>
+      <span>Freelancer</span><em>◇</em>
+      <span>Based in Surat</span><em>◇</em>
+      <span>Available now</span><em>◇</em>
+      <span>MERN Developer</span><em>◇</em>
+      <span>UX Minded</span><em>◇</em>
+      <span>Freelancer</span><em>◇</em>
+      <span>Based in Surat</span><em>◇</em>
+      <span>Available now</span><em>◇</em>
+    </div>
+  </div>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="section about" id="about" data-section="02" data-label="About">
+    <div class="section-head">
+      <div class="eyebrow" data-reveal><span>02</span> — About</div>
+      <h2 class="section-title" data-reveal>
+        Engineer by craft, <span class="ital">designer</span> by instinct.
+      </h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-copy">
+        <p data-reveal>
+          I've spent the last <strong>2+ years</strong> building real software. At
+          <strong>CoderKube Technology</strong> I've shipped <strong>15+ production projects</strong>,
+          from JD Web to Ship, both as a solo owner and as part of Agile teams — across the
+          MERN stack, Python and Laravel.
+        </p>
+        <p data-reveal>
+          On the side I run an active <strong>Upwork freelance practice</strong> (currently on a
+          weekly retainer) and have independently delivered <strong>3+ large end‑to‑end projects</strong>
+          — most visibly <em>CrystalStonesMart.com</em>.
+        </p>
+        <p data-reveal>
+          My focus: clean React interfaces, well‑designed REST APIs with JWT + RBAC,
+          MongoDB schemas that scale, and UI people actually enjoy using.
+        </p>
+
+        <div class="about-chips" data-reveal>
+          <span>Surat, Gujarat</span>
+          <span>B.E. Computer Engineering · 2026</span>
+          <span>NASSCOM AI/ML NSQF L5</span>
+          <span>Hindi · English · Gujarati</span>
+        </div>
+      </div>
+
+      <div class="about-card" data-reveal>
+        <div class="ac-corner tl"></div><div class="ac-corner tr"></div>
+        <div class="ac-corner bl"></div><div class="ac-corner br"></div>
+
+        <div class="ac-head">
+          <div class="ac-avatar">AS</div>
+          <div>
+            <div class="ac-name">Ammar Shaikh</div>
+            <div class="ac-role">MERN · Full‑Stack · UX</div>
+          </div>
+        </div>
+
+        <ul class="ac-list">
+          <li><i class="fa-solid fa-code"></i><span>React, Node, Express, MongoDB</span></li>
+          <li><i class="fa-solid fa-cloud"></i><span>Vercel, Firebase, Supabase</span></li>
+          <li><i class="fa-solid fa-shield-halved"></i><span>JWT Auth, RBAC, secure APIs</span></li>
+          <li><i class="fa-solid fa-gauge-high"></i><span>Perf, SEO, responsive UI</span></li>
+        </ul>
+
+        <a class="ac-link" href="#contact" data-cursor="write">
+          <span>Start a project</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H8M17 7v9"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section class="section skills" id="skills" data-section="03" data-label="Toolkit">
+    <div class="section-head">
+      <div class="eyebrow" data-reveal><span>03</span> — Toolkit</div>
+      <h2 class="section-title" data-reveal>
+        The <span class="ital">stack</span> I reach for.
+      </h2>
+    </div>
+
+    <div class="skills-block">
+      <div class="skill-col" data-reveal>
+        <div class="skill-col-title">
+          <span>Perfectly Known</span>
+          <small>Daily‑driver stack</small>
+        </div>
+        <div class="chip-grid">
+          <div class="chip"><i class="fa-brands fa-html5"></i>HTML5</div>
+          <div class="chip"><i class="fa-brands fa-css3-alt"></i>CSS3</div>
+          <div class="chip"><i class="fa-brands fa-js"></i>JavaScript</div>
+          <div class="chip"><i class="fa-brands fa-react"></i>React.js</div>
+          <div class="chip"><i class="fa-brands fa-node-js"></i>Node.js</div>
+          <div class="chip"><i class="fa-solid fa-server"></i>Express.js</div>
+          <div class="chip"><i class="fa-solid fa-leaf"></i>MongoDB</div>
+          <div class="chip"><i class="fa-solid fa-database"></i>SQL</div>
+          <div class="chip"><i class="fa-brands fa-bootstrap"></i>Bootstrap</div>
+          <div class="chip"><i class="fa-solid fa-wind"></i>Tailwind</div>
+          <div class="chip"><i class="fa-solid fa-key"></i>JWT Auth</div>
+          <div class="chip"><i class="fa-brands fa-git-alt"></i>Git · GitHub</div>
+        </div>
+      </div>
+
+      <div class="skill-col" data-reveal>
+        <div class="skill-col-title">
+          <span>Working Knowledge</span>
+          <small>Comfortable when the task calls</small>
+        </div>
+        <div class="chip-grid">
+          <div class="chip"><i class="fa-brands fa-java"></i>Java</div>
+          <div class="chip"><i class="fa-brands fa-python"></i>Python</div>
+          <div class="chip"><i class="fa-solid fa-c"></i>C</div>
+          <div class="chip"><i class="fa-brands fa-laravel"></i>Laravel</div>
+          <div class="chip"><i class="fa-brands fa-php"></i>PHP</div>
+          <div class="chip"><i class="fa-solid fa-fire"></i>Firebase</div>
+          <div class="chip"><i class="fa-solid fa-bolt"></i>Supabase</div>
+          <div class="chip"><i class="fa-brands fa-figma"></i>Figma</div>
+        </div>
+      </div>
+
+      <div class="skill-col wide" data-reveal>
+        <div class="skill-col-title">
+          <span>How I work</span>
+          <small>Beyond code</small>
+        </div>
+        <div class="soft-grid">
+          <div class="soft"><span>01</span><h4>Team Collaboration</h4><p>Comfortable in Agile sprints, code reviews, and clear async communication.</p></div>
+          <div class="soft"><span>02</span><h4>Leadership</h4><p>Own solo projects end‑to‑end. Mentor peers on best practices when they ask.</p></div>
+          <div class="soft"><span>03</span><h4>Problem Solving</h4><p>Break complex issues into simple, shippable steps.</p></div>
+          <div class="soft"><span>04</span><h4>Self‑Discipline</h4><p>Consistent delivery. Mostly self‑taught across many stacks.</p></div>
+          <div class="soft"><span>05</span><h4>Fast Learner</h4><p>Ramp quickly — proven across MERN, Python, and Laravel.</p></div>
+          <div class="soft"><span>06</span><h4>Adaptability</h4><p>Slot into any team's workflow and tech stack.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MARQUEE 2 ==================== -->
+  <div class="mq mq-2">
+    <div class="mq-track alt">
+      <span>Selected Work</span><em>✦</em>
+      <span>15+ Projects Shipped</span><em>✦</em>
+      <span>Independent Builds</span><em>✦</em>
+      <span>Real Users</span><em>✦</em>
+      <span>Selected Work</span><em>✦</em>
+      <span>15+ Projects Shipped</span><em>✦</em>
+      <span>Independent Builds</span><em>✦</em>
+      <span>Real Users</span><em>✦</em>
+    </div>
+  </div>
+
+  <!-- ==================== WORK (HORIZONTAL SCROLL) ==================== -->
+  <section class="work" id="work" data-section="04" data-label="Work">
+    <div class="section-head work-head">
+      <div class="eyebrow" data-reveal><span>04</span> — Selected Work</div>
+      <h2 class="section-title" data-reveal>
+        Shipped to <span class="ital">real users</span>.
+      </h2>
+      <p class="section-sub" data-reveal>Scroll horizontally through recent builds.</p>
+    </div>
+
+    <div class="h-scroll" id="hScroll">
+      <div class="h-track" id="hTrack">
+
+        <article class="h-card">
+          <div class="hc-visual">
+            <div class="hc-mock">
+              <div class="mock-bar"><span></span><span></span><span></span><em>crystalstonesmart.com</em></div>
+              <div class="mock-body">
+                <div class="mock-hero"></div>
+                <div class="mock-grid"><div></div><div></div><div></div><div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="hc-body">
+            <div class="hc-index">01 <em>/ 04</em></div>
+            <div class="hc-tags"><span>MERN</span><span>Live E‑commerce</span><span>Freelance</span></div>
+            <h3>CrystalStonesMart</h3>
+            <p class="hc-sub">B2B wholesale e‑commerce for crystal products — independent MERN build for a paying client.</p>
+            <ul class="hc-points">
+              <li>End‑to‑end platform: catalog, cart, orders, admin analytics</li>
+              <li>Google Auth, JWT sessions, role‑based access control</li>
+              <li>SEO‑ready, mobile‑first UI, 100+ product listings</li>
+            </ul>
+            <div class="hc-actions">
+              <a class="btn btn-primary sm" href="https://crystalstonesmart.com/" target="_blank" rel="noopener" data-cursor="visit">
+                <span>Visit site</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+              </a>
+              <span class="hc-stack">React · Node · Express · Mongo · JWT</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="h-card">
+          <div class="hc-visual">
+            <div class="hc-mock alt">
+              <div class="mock-bar"><span></span><span></span><span></span><em>nutrition-zeta-eight.vercel.app</em></div>
+              <div class="mock-body">
+                <div class="mock-hero"></div>
+                <div class="mock-grid"><div></div><div></div><div></div><div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="hc-body">
+            <div class="hc-index">02 <em>/ 04</em></div>
+            <div class="hc-tags"><span>React</span><span>Firebase</span><span>Health</span></div>
+            <h3>Nutrition Mate</h3>
+            <p class="hc-sub">Health & wellness platform with BMI tracking, calorie‑based recipes, and a supplement store.</p>
+            <ul class="hc-points">
+              <li>Auth, user records, feedback system, admin panel</li>
+              <li>Calorie planner + maintenance suggestions</li>
+              <li>Firestore data model + analytics dashboards</li>
+            </ul>
+            <div class="hc-actions">
+              <a class="btn btn-primary sm" href="https://nutrition-zeta-eight.vercel.app/" target="_blank" rel="noopener" data-cursor="visit">
+                <span>Visit site</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+              </a>
+              <span class="hc-stack">React · Firebase · Firestore · Vercel</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="h-card">
+          <div class="hc-visual">
+            <div class="hc-mock dark">
+              <div class="mock-bar"><span></span><span></span><span></span><em>coderkube · JD Web · Ship</em></div>
+              <div class="mock-body">
+                <div class="mock-hero"></div>
+                <div class="mock-grid"><div></div><div></div><div></div><div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="hc-body">
+            <div class="hc-index">03 <em>/ 04</em></div>
+            <div class="hc-tags"><span>MERN</span><span>Python</span><span>Laravel</span><span>Team</span></div>
+            <h3>CoderKube — 15+ Builds</h3>
+            <p class="hc-sub">Client and in‑house projects delivered as solo owner or in Agile teams — including JD Web and Ship.</p>
+            <ul class="hc-points">
+              <li>15+ REST APIs with JWT + RBAC serving 10K+ users</li>
+              <li>MongoDB schema redesigns → ~30% faster APIs</li>
+              <li>Cross‑stack delivery: MERN, Python, Laravel</li>
+            </ul>
+            <div class="hc-actions">
+              <a class="btn btn-primary sm" href="#contact" data-cursor="write">
+                <span>Request case study</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+              </a>
+              <span class="hc-stack">Mongo · Express · React · Node · Laravel</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="h-card">
+          <div class="hc-visual">
+            <div class="hc-mock warm">
+              <div class="mock-bar"><span></span><span></span><span></span><em>Upwork · Ongoing</em></div>
+              <div class="mock-body">
+                <div class="mock-hero"></div>
+                <div class="mock-grid"><div></div><div></div><div></div><div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="hc-body">
+            <div class="hc-index">04 <em>/ 04</em></div>
+            <div class="hc-tags"><span>Upwork</span><span>Retainer</span><span>Freelance</span></div>
+            <h3>Ongoing Upwork Retainer</h3>
+            <p class="hc-sub">Active weekly engagement — full‑stack features, bug fixes, and API integrations for a foreign client.</p>
+            <ul class="hc-points">
+              <li>3+ large freelance builds delivered independently</li>
+              <li>Own scope, timeline, and client communication</li>
+              <li>Open to new part‑time / project‑based contracts</li>
+            </ul>
+            <div class="hc-actions">
+              <a class="btn btn-primary sm" href="#contact" data-cursor="write">
+                <span>Hire for a project</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+              </a>
+              <span class="hc-stack">MERN · REST · JWT · Vercel · GitHub</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="h-end">
+          <div class="he-mark">✦</div>
+          <div class="he-text">End of selected work.<br/><a href="#contact">Let's build the next one.</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="h-progress" aria-hidden="true">
+      <div class="h-progress-bar" id="hProgressBar"></div>
+    </div>
+  </section>
+
+  <!-- ==================== TIMELINE ==================== -->
+  <section class="section experience" id="experience" data-section="05" data-label="Timeline">
+    <div class="section-head">
+      <div class="eyebrow" data-reveal><span>05</span> — Journey</div>
+      <h2 class="section-title" data-reveal>
+        Experience & <span class="ital">education</span>.
+      </h2>
+    </div>
+
+    <div class="timeline-wrap">
+      <div class="tl-col">
+        <h3 class="tl-heading" data-reveal><i class="fa-solid fa-briefcase"></i> Experience</h3>
+        <div class="tl">
+          <div class="tl-item" data-reveal>
+            <div class="tl-date">Oct 2025 — Present</div>
+            <div class="tl-body">
+              <h4>MERN Stack Developer</h4>
+              <p class="tl-org">CoderKube Technology</p>
+              <p>Shipped 15+ production projects (JD Web, Ship, more). 15+ REST APIs, MongoDB perf tuning, Agile team delivery.</p>
+            </div>
+          </div>
+          <div class="tl-item" data-reveal>
+            <div class="tl-date">2024 — Present</div>
+            <div class="tl-body">
+              <h4>Freelance MERN Developer</h4>
+              <p class="tl-org">Upwork &amp; direct clients</p>
+              <p>3+ large freelance builds including CrystalStonesMart. Currently on an active Upwork weekly retainer.</p>
+            </div>
+          </div>
+          <div class="tl-item" data-reveal>
+            <div class="tl-date">2024 — 2025</div>
+            <div class="tl-body">
+              <h4>Full‑Stack Developer <em>(Training)</em></h4>
+              <p class="tl-org">Red &amp; White Multimedia Education</p>
+              <p>Intensive full‑stack program: MERN, deployment, auth, modern frontend workflows.</p>
+            </div>
+          </div>
+          <div class="tl-item" data-reveal>
+            <div class="tl-date">Aug 2024</div>
+            <div class="tl-body">
+              <h4>AI‑ML Engineer — NSQF Level 5</h4>
+              <p class="tl-org">NASSCOM · Skill India</p>
+              <p>Government‑recognized certification in applied AI & ML fundamentals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-col">
+        <h3 class="tl-heading" data-reveal><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+        <div class="tl">
+          <div class="tl-item" data-reveal>
+            <div class="tl-date">2022 — 2026</div>
+            <div class="tl-body">
+              <h4>B.E. in Computer Engineering</h4>
+              <p class="tl-org">S.S.A.S.I.T., Surat · G.T.U.</p>
+              <p>First Class with Distinction · CGPA 7.5+ · Graduating April 2026.</p>
+            </div>
+          </div>
+          <div class="tl-item" data-reveal>
+            <div class="tl-date">Aug 2025</div>
+            <div class="tl-body">
+              <h4>Full Stack Web Development</h4>
+              <p class="tl-org">Red &amp; White Skill Education</p>
+              <p>Certified full‑stack web development program.</p>
+            </div>
+          </div>
+          <div class="tl-item" data-reveal>
+            <div class="tl-date">2021 — 2022</div>
+            <div class="tl-body">
+              <h4>H.S.C.</h4>
+              <p class="tl-org">G.S.E.B.</p>
+              <p>Higher Secondary — Science stream.</p>
+            </div>
+          </div>
+          <div class="tl-item" data-reveal>
+            <div class="tl-date">2019 — 2020</div>
+            <div class="tl-body">
+              <h4>S.S.C.</h4>
+              <p class="tl-org">G.S.E.B.</p>
+              <p>Secondary School Certificate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="section testimonials" id="testimonials" data-section="06" data-label="Voices">
+    <div class="section-head">
+      <div class="eyebrow" data-reveal><span>06</span> — Kind words</div>
+      <h2 class="section-title" data-reveal>
+        What clients & mentors <span class="ital">say</span>.
+      </h2>
+    </div>
+
+    <div class="t-grid">
+      <div class="t-card" data-reveal>
+        <div class="t-quote">"</div>
+        <p>Best experience! Ammar made our productivity and advertising easy with Crystal Stones Mart. Highly efficient and reliable.</p>
+        <div class="t-meta">
+          <strong>Adjaz Shaikh</strong>
+          <span>Owner, Crystal Stones Mart</span>
+        </div>
+      </div>
+      <div class="t-card" data-reveal>
+        <div class="t-quote">"</div>
+        <p>Using Ammar's Nutrition Mate I manage health check‑ups for my personal clients efficiently. Truly helpful for fitness planning.</p>
+        <div class="t-meta">
+          <strong>Faruk Shaikh</strong>
+          <span>Gym Trainer</span>
+        </div>
+      </div>
+      <div class="t-card" data-reveal>
+        <div class="t-quote">"</div>
+        <p>Ammar has solid knowledge of working with live websites and REST APIs. Great understanding of full‑stack development.</p>
+        <div class="t-meta">
+          <strong>Piyush Nakrani</strong>
+          <span>React & Node Mentor</span>
+        </div>
+      </div>
+      <div class="t-card" data-reveal>
+        <div class="t-quote">"</div>
+        <p>Ammar is a professional front‑end developer. He delivers quality and perfection.</p>
+        <div class="t-meta">
+          <strong>Hardik Patel</strong>
+          <span>Front‑End Mentor</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MARQUEE 3 ==================== -->
+  <div class="mq mq-3">
+    <div class="mq-track">
+      <span>Let's Talk</span><em>◇</em>
+      <span>Open for Freelance</span><em>◇</em>
+      <span>Remote Friendly</span><em>◇</em>
+      <span>Reply within 24h</span><em>◇</em>
+      <span>Let's Talk</span><em>◇</em>
+      <span>Open for Freelance</span><em>◇</em>
+      <span>Remote Friendly</span><em>◇</em>
+      <span>Reply within 24h</span><em>◇</em>
+    </div>
+  </div>
+
+  <!-- ==================== CONTACT (BIG TEXT FILL) ==================== -->
+  <section class="contact" id="contact" data-section="07" data-label="Contact">
+    <div class="contact-inner">
+      <div class="eyebrow" data-reveal><span>07</span> — Contact</div>
+
+      <h2 class="fill-text" id="fillText">
+        <span>Let's build</span>
+        <span>something</span>
+        <span class="ital">people love.</span>
+      </h2>
+
+      <p class="contact-lead" data-reveal>
+        Freelance projects, full‑time opportunities, or just a chat — my inbox is open.
       </p>
 
-      <div class="row justify-content-center col-lg-12 col-md-10 col-sm-10">
-        <div class="services-table mb-5 mt-5 position-relative">
-
-          <div  data-aos="zoom-out"  class="service-row d-flex align-item-center px-3 border-b-primary justify-content-between">
-            <div class="d-flex align-content-center py-4">
-              <p class="fs-3 fw-bold color-primary me-3 ms-4">01</p>
-              <div class="fs-2 fw-bolder text-left text-white ms-3">Team Collaboration</div>
-            </div>
-            <div class="text-white my-auto fs-5">
-              <p>Effectively work in team environments, communicate ideas clearly, and achieve common goals.</p>
-            </div>
-          </div>
-
-          <div data-aos="zoom-out" class="service-row d-flex align-item-center px-3 border-b-primary justify-content-between">
-            <div class="d-flex align-content-center py-4">
-              <p class="fs-3 fw-bold color-primary me-3 ms-4">02</p>
-              <div class="fs-2 fw-bolder text-left text-white ms-3">Leadership</div>
-            </div>
-            <div class="text-white my-auto fs-5">
-              <p>Lead projects, guide team members, and take initiative in achieving tasks efficiently.</p>
-            </div>
-          </div>
-
-          <div data-aos="zoom-out" class="service-row d-flex align-item-center px-3 border-b-primary justify-content-between">
-            <div class="d-flex align-content-center py-4">
-              <p class="fs-3 fw-bold color-primary me-3 ms-4">03</p>
-              <div class="fs-2 fw-bolder text-left text-white ms-3">Problem Solving</div>
-            </div>
-            <div class="text-white my-auto fs-5">
-              <p>Analyze complex issues, identify solutions quickly, and implement them effectively in projects.</p>
-            </div>
-          </div>
-
-          <div data-aos="zoom-out" class="service-row d-flex align-item-center px-3 border-b-primary justify-content-between">
-            <div class="d-flex align-content-center py-4">
-              <p class="fs-3 fw-bold color-primary me-3 ms-4">04</p>
-              <div class="fs-2 fw-bolder text-left text-white ms-3">Self-discipline & Learning</div>
-            </div>
-            <div class="text-white my-auto fs-5">
-              <p>Consistently learn new technologies, adapt quickly, and maintain discipline to achieve goals.</p>
-            </div>
-          </div>
-
-          <div data-aos="zoom-out" class="service-row d-flex align-item-center px-3 border-b-primary justify-content-between">
-            <div class="d-flex align-content-center py-4">
-              <p class="fs-3 fw-bold color-primary me-3 ms-4">05</p>
-              <div class="fs-2 fw-bolder text-left text-white ms-3">Fast & Quick Learner</div>
-            </div>
-            <div class="text-white my-auto fs-5">
-              <p>Quickly grasp new concepts, programming languages, and frameworks to deliver high-quality work.</p>
-            </div>
-          </div>
-
-          <div data-aos="zoom-out" class="service-row d-flex align-item-center px-3 border-b-primary justify-content-between">
-            <div class="d-flex align-content-center py-4">
-              <p class="fs-3 fw-bold color-primary me-3 ms-4">06</p>
-              <div class="fs-2 fw-bolder text-left text-white ms-3">Adaptability</div>
-            </div>
-            <div class="text-white my-auto fs-5">
-              <p>Adjust seamlessly to new tools, work environments, and project requirements to deliver efficient results.</p>
-            </div>
-          </div>
-
-        </div>
+      <div class="contact-grid">
+        <a class="c-card" href="mailto:ammar15102004@gmail.com" data-reveal data-cursor="write">
+          <div class="c-lbl">Email</div>
+          <div class="c-val">ammar15102004@gmail.com</div>
+          <div class="c-arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        </a>
+        <a class="c-card" href="tel:+919898326125" data-reveal data-cursor="call">
+          <div class="c-lbl">Phone</div>
+          <div class="c-val">+91 98983 26125</div>
+          <div class="c-arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        </a>
+        <a class="c-card" href="https://wa.me/919898326125" target="_blank" rel="noopener" data-reveal data-cursor="chat">
+          <div class="c-lbl">WhatsApp</div>
+          <div class="c-val">Chat instantly</div>
+          <div class="c-arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        </a>
+        <a class="c-card" href="https://www.linkedin.com/in/ammar-shaikh-747897250" target="_blank" rel="noopener" data-reveal data-cursor="visit">
+          <div class="c-lbl">LinkedIn</div>
+          <div class="c-val">/in/ammar-shaikh-747897250</div>
+          <div class="c-arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        </a>
+        <a class="c-card" href="https://github.com/ammar3040" target="_blank" rel="noopener" data-reveal data-cursor="visit">
+          <div class="c-lbl">GitHub</div>
+          <div class="c-val">github.com/ammar3040</div>
+          <div class="c-arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        </a>
+        <a class="c-card" href="https://www.instagram.com/ammar_3040/" target="_blank" rel="noopener" data-reveal data-cursor="visit">
+          <div class="c-lbl">Instagram</div>
+          <div class="c-val">@ammar_3040</div>
+          <div class="c-arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
+        </a>
       </div>
-    </div>
-  </div>
-</section>
 
-
-  <!-- Projects -->
-  <section class="hero-bg-b py-4 h-font overflow-hidden" id="projects">
-    <div class="container-fluid">
-      <h3 class="bg-h text-center mt-5 fw-bold" data-aos="zoom-out">Featured Projects</h3>
-      <p class="text-center text-white fs-4 pt-3" data-aos="zoom-out">Real‑world apps built with modern stacks.</p>
-
-      <div class="row justify-content-center g-4 px-3" data-aos="fade-up" data-aos-duration="1200">
-        <!-- Crystal Stones Mart -->
-        <div class="col-lg-5 col-md-6">
-          <div class="h-card rounded-4 overflow-hidden">
-            <div class="content-box h-font px-4 pt-4 pb-3">
-              <h2 class="h-card-title mt-4">Crystal Stones Mart</h2>
-              <p class="h-card-title fs-6 color-primary mb-2"><i class="fa-solid fa-gem me-2"></i>B2B Wholesale E‑commerce</p>
-              <p class="h-card-content fs-6 mb-2">
-                A wholesale marketplace for crystal products tailored to hall‑sellers. Includes product catalog, cart & order flow, role‑based admin, and inquiry management.
-              </p>
-              <ul class="text-white-50 fs-6 mb-3">
-                <li>Stack: <strong>MERN</strong> (MongoDB, Express, React, Node)</li>
-                <li>Highlights: SEO‑ready, secure auth, responsive UI, performance‑optimized</li>
-              </ul>
-             <a href="https://crystalstonesmart.com/"> <span class="see-more">visit Website</span></a>
-            </div>
-            <div class="date-box rounded-4">
-              <img src="assets/image/fullLogo.png" alt="Crystal Stones Mart preview" class=" h-100 rounded-4" style="width: 190%;" />
-            </div>
-          </div>
-        </div>
-        <!-- Nutrition Mate -->
-        <div class="col-lg-5 col-md-6">
-          <div class="h-card rounded-4 overflow-hidden">
-            <div class="content-box h-font px-4 pt-4 pb-3">
-              <h2 class="h-card-title mt-4">Nutrition Mate</h2>
-              <p class="h-card-title fs-6 color-primary mb-2"><i class="fa-solid fa-apple-whole me-2"></i>Health & Nutrition Platform</p>
-              <p class="h-card-content fs-6 mb-2">
-                Health‑focused web app with a small e‑commerce for nutrition products, BMI (yearly) tracking, calorie‑based food suggestions, and maintenance‑calorie planning.
-              </p>
-              <ul class="text-white-50 fs-6 mb-3">
-                <li>Stack: <strong>React + Firebase</strong></li>
-                <li>Features: Auth, product listing, cart, analytics dashboards</li>
-              </ul>
-              <a href="https://nutrition-zeta-eight.vercel.app/"><span class="see-more">visit website</span></a>
-            </div>
-            <div class="date-box rounded-4 mb-3">
-              <img src="assets/image/nutritonmate.png" alt="Nutrition Mate preview" class=" h-100 rounded-4" style="width: 190%;" />
-            </div>
-          </div>
-        </div>
+      <div class="loc" data-reveal>
+        <i class="fa-solid fa-location-dot"></i> Rander, Surat, Gujarat — 395005
       </div>
     </div>
   </section>
 
-  <!-- Experience & Education -->
-  <section class="bg-black overflow-hidden" id="experience">
-    <div class="container-fluid">
-      <div class="row justify-content-center px-3">
-        <div class="s-edu col-lg-6 justify-content-center row pb-5">
-          <h2 class="bg-h ms-5"><i class="fa-solid fa-briefcase mx-3 ms-5 pt-5 pb-3"></i>My Experience</h2>
-
-          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-right">
-            <h2 class="color-primary mb-2 fw-bold">2024 – 2025</h2>
-            <p class="text-white fs-2 my-2 fw-bold">Full‑Stack Developer</p>
-            <p class="fs-6 text-white-50 mb-0 fw-semibold">Red & White Multimedia Education</p>
-          </div>
-
-          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-right">
-            <h2 class="color-primary mb-2 fw-bold">2024 – present</h2>
-            <p class="text-white fs-2 my-2 fw-bold">MERN Stack Developer</p>
-            <p class="fs-6 text-white-50 mb-1 fw-semibold">React, Node, Express, MongoDB</p>
-            <p class="fs-6 text-white-50 mb-0">Building end‑to‑end web apps and APIs.</p>
-          </div>
-
-          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-right">
-            <h2 class="color-primary mb-2 fw-bold">2024 – 2024</h2>
-            <p class="text-white fs-2 my-2 fw-bold">AI-ML Engineer – NSQF Level 5</p>
-            <p class="fs-6 text-white-50 mb-0 fw-semibold">NASSCOM (Skill India)</p>
-          </div>
-        </div>
-
-        <div class="s-exp col-lg-6 justify-content-center row pb-5">
-          <h2 class="bg-h ms-5"><i class="fa-solid fa-graduation-cap mx-3 ms-5 pt-5 pb-3"></i>My Education</h2>
-
-          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-left">
-            <h2 class="color-primary mb-2 fw-bold">2022 – 2026</h2>
-            <p class="text-white fs-2 my-2 fw-bold">B.E. in Computer Engineering</p>
-            <p class="fs-6 text-white-50 mb-1 fw-semibold">S.S.A.S.I.T., Surat — under G.T.U.</p>
-            <p class="fs-6 text-white-50 mb-0">Currently pursuing • Expected graduation: <strong>2026</strong></p>
-          </div>
-
-          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-left">
-            <h2 class="color-primary mb-2 fw-bold">2024 – present</h2>
-            <p class="text-white fs-2 my-2 fw-bold">Full‑Stack Development (Training)</p>
-            <p class="fs-6 text-white-50 mb-0 fw-semibold">Red & White Multimedia Education</p>
-          </div>
-
-          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-left">
-            <h2 class="color-primary mb-2 fw-bold">2021 – 2022</h2>
-            <p class="text-white fs-2 my-2 fw-bold">H.S.C.</p>
-            <p class="fs-6 text-white-50 mb-0 fw-semibold">G.S.E.B.</p>
-          </div>
-
-          <div class="s-detailbox h-font pb-1 pt-3 px-5 rounded-5 m-3 col-10" data-aos="fade-left">
-            <h2 class="color-primary mb-2 fw-bold">2019 – 2020</h2>
-            <p class="text-white fs-2 my-2 fw-bold">S.S.C.</p>
-            <p class="fs-6 text-white-50 mb-0 fw-semibold">G.S.E.B.</p>
-          </div>
-        </div>
+  <footer class="footer">
+    <div class="f-inner">
+      <div class="f-left">
+        <div class="f-mark">Ammar<em>Shaikh</em></div>
+        <div class="f-copy">© <span id="year"></span> — Built by hand with HTML, CSS, JS, Three.js & GSAP.</div>
+      </div>
+      <div class="f-social">
+        <a href="https://www.linkedin.com/in/ammar-shaikh-747897250" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/ammar3040" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/ammar_3040/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/919898326125" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
     </div>
-  </section>
-
-
-
-  <!-- Feedback / Testimonials -->
-<section class="bg-black overflow-hidden" id="feedback">
-  <div class="container-fluid">
-    <div class="row p-0 m-0 gap-0 pt-5 align-content-center justify-content-center">
-      
-      <div class="mt-5 mx-3 col-lg-5 col-md-12">
-        <h2 class="bg-h fw-bold" data-aos="zoom-out">My Clients' Stories</h2>
-        <p class="fs-4 text-white" data-aos="zoom-out">Empowering people in their digital journey with my services.</p>
-      </div>
-
-      <div class="px-2 row align-content-center col-lg-6 col-md-12">
-        <div class="s-slider align-content-center row px-auto w-100">
-          <div class="swiper mySwiper px-4 align-content-center" data-aos="fade-left" data-aos-offset="200" data-aos-duration="600">
-            <div class="swiper-wrapper">
-
-             
-
-              <!-- Adjaz Shaikh -->
-              <div class="swiper-slide row align-content-center me-5">
-                <div class="h-card rounded-4">
-                  <div class="content-box h-font px-3 pt-5 pb-3">
-                    <h1 class="h-card-title">Adjaz Shaikh</h1>
-                    <p class="h-card-title fs-5 color-primary mb-0"><i class="fa-solid fa-user-tie me-3"></i>Owner, Crystal Stones Mart</p>
-                    <p class="h-card-content fs-6 mt-0">“Best experience! Ammar made our productivity and advertising easy with Crystal Stones Mart. Highly efficient and reliable.”</p>
-                 
-                  </div>
-                  <div class="date-box rounded-4">
-                    <img src="assets/image/img-5.jpeg" alt="Adjaz Shaikh" class="w-100 rounded-4" />
-                  </div>
-                </div>
-              </div>
-
-              <!-- Faruk Shaikh -->
-              <div class="swiper-slide row align-content-center me-5">
-                <div class="h-card rounded-4">
-                  <div class="content-box h-font px-3 pt-5 pb-3">
-                    <h1 class="h-card-title">Faruk Shaikh</h1>
-                    <p class="h-card-title fs-5 color-primary"><i class="fa-solid fa-dumbbell me-3"></i>Gym Trainer</p>
-                    <p class="h-card-content fs-6">“Using Ammar's Nutrition Mate, I manage health check-ups for my personal clients efficiently. Truly helpful for fitness planning.”</p>
-                    
-                  </div>
-                  <div class="date-box rounded-4">
-                    <img src="assets/image/img-5.jpeg" alt="Faruk Shaikh" class="w-100 rounded-4" />
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Piyush Nakrani -->
-              <div class="swiper-slide row align-content-center me-5">
-                <div class="h-card rounded-4">
-                  <div class="content-box h-font px-3 pt-5 pb-3">
-                    <h1 class="h-card-title">Piyush Nakrani</h1>
-                    <p class="h-card-title fs-5 color-primary"><i class="fa-solid fa-user-tie me-3"></i>React & Node Mentor</p>
-                    <p class="h-card-content fs-6">“Ammar has solid knowledge of working with live websites and REST APIs. Great understanding of full-stack development.”</p>
-                    <span class="see-more">See More</span>
-                  </div>
-                  <div class="date-box rounded-4">
-                    <img src="assets/image/image.png" alt="Piyush Nakrani" class="w-100 rounded-4" />
-                  </div>
-                </div>
-              </div>
- <!-- Hardik Patel -->
-              <div class="swiper-slide row align-content-center me-5">
-                <div class="h-card rounded-4">
-                  <div class="content-box h-font px-3 pt-5 pb-3">
-                    <h1 class="h-card-title">Hardik Patel</h1>
-                    <p class="h-card-title fs-5 color-primary"><i class="fa-solid fa-image-portrait me-3"></i>FrontEnd Mentor</p>
-                    <p class="h-card-content fs-6">“Ammar is a professional front‑end developer. He delivers quality and perfection.”</p>
-                   
-                  </div>
-                  <div class="date-box rounded-4">
-                    <img src="assets/image/Screenshot 2024-05-05 180940.png" alt="Hardik Patel" class="w-100 rounded-4" />
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-  <!-- Contact Form -->
-<section class="bg-black h-font py-5 overflow-hidden" id="contact">
-  <div class="container-fluid">
-    
-    <!-- Heading -->
-    <div class="text-center mb-5">
-      <h2 class="bg-h fs-1 fw-bolder">Contact Me </h2>
-      <p class="fs-6 text-white">I will responce you with</p>
-    </div>
-
-    <div class="row justify-content-center">
-
-      <!-- Left Column -->
-      <div class="col-lg-6 col-md-12" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-        <div class="persnal-info align-content-center">
-
-          <!-- Phone -->
-          <div class="prs-card d-flex mb-5">
-            <div class="prs-logo text-white text-center py-2">
-              <i class="fa-solid fa-phone-volume rounded-circle p-3"></i>
-            </div>
-            <div class="prs-detail ms-4 m-0 w-fit">
-              <span class="fs-5 text-white m-0 p-0 fw-semibold">Phone / WhatsApp</span>
-              <p class="fs-4 text-white mt-1 m-0 p-0 fw-bold">
-                <a href="tel:+919898326125" class="text-white text-decoration-none">+91 98983 26125</a> |
-                <a href="https://wa.me/919898326125" target="_blank" class="text-white text-decoration-none">WhatsApp</a>
-              </p>
-            </div>
-          </div>
-
-          <!-- Email -->
-          <div class="prs-card d-flex mb-5">
-            <div class="prs-logo text-white text-center py-2">
-              <i class="fa-solid fa-envelope rounded-circle p-3"></i>
-            </div>
-            <div class="prs-detail ms-4 m-0 w-fit">
-              <span class="fs-5 text-white m-0 p-0 fw-semibold">Email</span>
-              <p class="fs-4 text-white mt-1 m-0 p-0 fw-bold">
-                <a href="mailto:ammar15102004@gmail.com" class="text-white text-decoration-none">ammar15102004@gmail.com</a>
-              </p>
-            </div>
-          </div>
-    <!-- Address -->
-          <div class="prs-card d-flex mb-">
-            <div class="prs-logo text-white text-center py-2">
-              <i class="fa-solid fa-location-dot rounded-circle p-3"></i>
-            </div>
-            <div class="prs-detail ms-4 m-0 w-fit">
-              <span class="fs-5 text-white m-0 p-0 fw-semibold">Address</span>
-              <p class="fs-4 text-white mt-1 m-0 p-0 fw-bold">
-                Rander, Surat, Gujarat<br />395005
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Right Column -->
-      <div class="col-lg-6 col-md-12" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
-        <div class="persnal-info align-content-center">
-
-          <!-- LinkedIn -->
-          <div class="prs-card d-flex mb-5">
-            <div class="prs-logo text-white text-center py-2">
-              <i class="fa-brands fa-linkedin rounded-circle p-3"></i>
-            </div>
-            <div class="prs-detail ms-4 m-0 w-fit">
-              <span class="fs-5 text-white m-0 p-0 fw-semibold">LinkedIn</span>
-              <p class="fs-4 text-white mt-1 m-0 p-0 fw-bold">
-                <a href="https://www.linkedin.com/in/ammar-shaikh-747897250" target="_blank" class="text-white text-decoration-none">linkedin@AmmarShaikh</a>
-              </p>
-            </div>
-          </div>
-              <!-- GitHub -->
-          <div class="prs-card d-flex mb-5">
-            <div class="prs-logo text-white text-center py-2">
-              <i class="fa-brands fa-github rounded-circle p-3"></i>
-            </div>
-            <div class="prs-detail ms-4 m-0 w-fit">
-              <span class="fs-5 text-white m-0 p-0 fw-semibold">GitHub</span>
-              <p class="fs-4 text-white mt-1 m-0 p-0 fw-bold">
-                <a href="https://github.com/ammar3040" target="_blank" class="text-white text-decoration-none">githubammar3040</a>
-              </p>
-            </div>
-          </div>
-
-      
-
-          <!-- Message / Note -->
-          <div class="prs-card d-flex">
-            <div class="prs-logo text-white text-center py-2">
-              <i class="fa-solid fa-comment-dots rounded-circle p-3"></i>
-            </div>
-            <div class="prs-detail ms-4 m-0 w-fit">
-              <span class="fs-5 text-white m-0 p-0 fw-semibold">Message</span>
-              <p class="fs-4 text-white mt-1 m-0 p-0 fw-bold">
-                Feel free to reach out via any platform. I will respond promptly!
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- Footer -->
-  <footer class="footer-area bg-black" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-          <div class="contact-content text-center">
-            <div class="contact-social">
-              <ul class="list-unstyled">
-                
-                <li><a class="hover-target" target="_blank"  href="https://www.linkedin.com/in/ammar-shaikh-747897250"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a class="hover-target" target="_blank"  href="https://github.com/ammar3040"><i class="fab fa-github"></i></a></li>
-                <li><a class="hover-target" target="_blank"  href="https://www.instagram.com/ammar_3040/"><i class="fab fa-instagram"></i></a></li>
-                <li><a class="hover-target" target="_blank"  href="https://wa.me/919898326125"><i class="fab fa-whatsapp"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="text-center text-white-50">Copyright &copy; 2024 • Thanks for visiting.</p>
   </footer>
 
-  <!-- Scripts -->
-  <!-- jquery js -->
-  <script src="assets/js/jquery-3.7.1.slim.min.js"></script>
-  <!-- bootstrap js -->
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS -->
-  <script src="assets/js/aos.js"></script>
-  <!-- Swiper -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Loader hide -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const loader = document.querySelector(".loading");
-      if (loader) loader.classList.add("hide");
-    });
-  </script>
-
-  <!-- Cursor follow -->
-  <script>
-    $(window).mousemove(function (e) {
-      $(".ring").css(
-        "transform",
-        `translateX(calc(${e.clientX}px - 1.25rem)) translateY(calc(${e.clientY}px - 1.25rem))`
-      );
-    });
-  </script>
-
-  <!-- Navbar toggle icon -->
-  <script>
-    function toggleButton() {
-      var button = document.querySelector('.bar-button');
-      if (button) button.textContent = (button.textContent === '☰') ? '✖' : '☰';
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+      "lenis": "./vendor/lenis.mjs"
     }
+  }
   </script>
-
-  <!-- Service rows reveal -->
-  <script>
-    $(document).ready(function () {
-      $(window).scroll(function () {
-        var $rows = $('.service-row');
-        if ($rows.length === 0) return;
-        var imagePos = $rows.first().offset().top;
-        var windowHeight = $(window).height();
-        var topOfWindow = $(window).scrollTop();
-        if (imagePos < topOfWindow + windowHeight - 100) {
-          $rows.addClass("visible");
-        }
-      });
-    });
-  </script>
-
-  <!-- Swiper init -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 2,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        0: { slidesPerView: 1, spaceBetween: 16 },
-        992: { slidesPerView: 2, spaceBetween: 24 }
-      }
-    });
-  </script>
-
-  <!-- AOS init -->
-  <script>
-    AOS.init();
-  </script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>
